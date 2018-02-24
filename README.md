@@ -13,3 +13,6 @@ JDK 9.0.4
 $ git clone https://github.com/rskyte/BeatBox.git
 $ cd BeatBox
 ```
+
+#### Acknowledgements
+This program was written following the guidance of the book Head First Java (O'Reilly, 2005).
