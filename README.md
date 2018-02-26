@@ -6,7 +6,9 @@ A musical program written in Java, where users create 16 bar beats using a range
 
 JDK 9.0.4
 
-(test suite)
+JUnit 4.12
+
+Mockito-core 2.11
 
 #### Setup - Getting the Repo
 ```
