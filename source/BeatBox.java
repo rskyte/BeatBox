@@ -62,6 +62,12 @@ public class BeatBox {
         buildGUI(isOnline);
     }//close startUp
 
+    public void addButton(String text, ActionListener listener, Box buttonBox) {
+        JButton button = new JButton(text);
+        button.addActionListener(listener);
+        buttonBox.add(button);
+    }
+
     public void buildGUI(boolean isOnline) {
         if (isOnline) {
             theFrame = new JFrame("Cyber BeatBox - Online");
@@ -77,33 +83,13 @@ public class BeatBox {
         Box buttonBox = new Box(BoxLayout.Y_AXIS);
 
         //add buttons
-        JButton start = new JButton("Start");
-        start.addActionListener(new MyStartListener());
-        buttonBox.add(start);
-
-        JButton stop = new JButton("Stop");
-        stop.addActionListener(new MyStopListener());
-        buttonBox.add(stop);
-
-        JButton upTempo = new JButton("Tempo Up");
-        upTempo.addActionListener(new MyUpTempoListener());
-        buttonBox.add(upTempo);
-
-        JButton downTempo = new JButton("Tempo Down");
-        downTempo.addActionListener(new MyDownTempoListener());
-        buttonBox.add(downTempo);
-
-        JButton save = new JButton("Save");
-        save.addActionListener(new MySaveListener());
-        buttonBox.add(save);
-
-        JButton load = new JButton("Load");
-        load.addActionListener(new MyLoadListener());
-        buttonBox.add(load);
-
-        JButton sendIt = new JButton("Send It");
-        sendIt.addActionListener(new MySendListener());
-        buttonBox.add(sendIt);
+        addButton("Start", new MyStartListener(), buttonBox);
+        addButton("Stop", new MyStopListener(), buttonBox);
+        addButton("Tempo Up", new MyUpTempoListener(), buttonBox);
+        addButton("Tempo Down", new MyDownTempoListener(), buttonBox);
+        addButton("Save", new MySaveListener(), buttonBox);
+        addButton("Load", new MyLoadListener(), buttonBox);
+        addButton("Send It", new MySendListener(), buttonBox);
 
         userMessage = new JTextField();
         buttonBox.add(userMessage);
